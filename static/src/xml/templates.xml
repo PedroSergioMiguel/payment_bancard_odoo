@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="bancard_template_modal" name="BancardModal">
+
+        <t t-name="payment_bancard.bancard_modal">
+    
+            <div id="myModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Detalles del pago</h4>
+                        <button type="button" class="close" data-dismiss="modal">&amp;times;</button>
+                    </div>
+                    <div class="modal-body">
+                            
+                        <div style="height: 130px; width: 100%; margin: auto" id="iframe-container"></div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    </div>
+                    </div>
+
+                </div>
+            </div>
+        </t>
+    </template>
+
+</odoo>
+
+

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="payment_acquirer_bancard" model="payment.acquirer">
+            <field name="name">Bancard</field>
+            <field name="image_128" type="base64" file="payment_bancard/static/src/img/bancard_icon.png"/>
+            <field name="provider">bancard</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="view_template_id" ref="bancard_form"/>
+            <field name="registration_view_template_id" ref="bancard_s2s_form"/>
+        </record>
+    </data> 
+</odoo>

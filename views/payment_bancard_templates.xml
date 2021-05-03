@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="bancard_form">
+            <input type="hidden" name="data_set" t-att-data-action-url="tx_url" data-remove-me=""/>
+            <input type='hidden' name='session_id' t-att-value='session_id'/>
+            <!--input type="hidden" name="bancardocacional_privateKey" t-att-value="acquirer.bancardocacional_privateKey"/>
+            <input type="hidden" name="bancardocacional_publicKey" t-att-value="acquirer.bancardocacional_publicKey"/>
+            <input type="hidden" name="item_name" t-att-value="item_name"/>
+            <input type="hidden" name="item_number" t-att-value="item_number"/>
+            <input type="hidden" name="amount" t-att-value="amount"/-->
+        </template>
+
+        <template id="bancard_s2s_form">
+            <input type="hidden" name="data_set" value="/payment/bancard/s2s/create_json_3ds"/>
+            <input type="hidden" name="acquirer_id" t-att-value="id"/>
+            <input type="hidden" name="bancard_publicKey" t-att-value="acq.sudo().bancard_publicKey"/>
+            <!--input type="hidden" name="currency_id" t-att-value="currency_id"/>
+            <input t-if="return_url" type="hidden" name="return_url" t-att-value="return_url"/>
+            <input t-if="partner_id" type="hidden" name="partner_id" t-att-value="partner_id"/-->
+            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+            <div id="payment-form">
+                <div id="card-element" class="m-3"/>
+                <div id="card-errors" class="m-3 text-danger"/>
+            </div>
+        </template>
+
+        <template id="assets_frontend" inherit_id="web.assets_frontend">
+            <xpath expr="script[last()]" position="after">
+                <script type="text/javascript" src="/payment_bancard/static/src/js/bancard-checkout-3.0.0.js"></script>
+                <script type="text/javascript" src="/payment_bancard/static/src/js/bancard_form.js"></script>
+            </xpath>
+        </template>
+    </data>
+</odoo>
